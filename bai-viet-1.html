@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đọc Bài Viết - Góc Phân Tích</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <style>
+        /* CSS dùng chung để đồng bộ giao diện */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; }
+        header { background-color: #1a252f; color: #ffffff; padding: 2rem 0; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin-bottom: 0; opacity: 0.8; }
+        nav { margin-top: 20px; }
+        nav a { color: #3498db; text-decoration: none; margin: 0 15px; font-size: 1.1rem; font-weight: bold; }
+        nav a:hover { color: #ffffff; }
+        .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+        footer { text-align: center; padding: 20px; background-color: #1a252f; color: #ffffff; margin-top: 40px; }
+
+        /* CSS trang trí riêng cho phần nội dung bài viết */
+        .article-content {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        /* Chỉnh sửa kiểu dáng cho các thẻ HTML được tạo ra từ Markdown */
+        .article-content h1 { color: #2c3e50; font-size: 2.2rem; margin-top: 0;}
+        .article-content h2 { color: #34495e; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; margin-top: 30px;}
+        .article-content p { font-size: 1.1rem; color: #444; }
+        .article-content blockquote {
+            border-left: 5px solid #3498db;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #f8f9fa;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Trang Phân Tích Của [Tên Của Bạn]</h1>
+        <nav>
+            <a href="index.html">Trang chủ</a>
+            <a href="lien-he.html">Liên hệ</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <article id="hien-thi-bai-viet" class="article-content">
+            </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 [Tên Của Bạn]. Đã đăng ký bản quyền.</p>
+    </footer>
+
+    <textarea id="noi-dung-markdown" style="display: none;">
+# Đánh giá xu hướng thị trường Quý 1
+
+**Đăng ngày:** 11 Tháng 3, 2026
+
+Đây là bài phân tích chuyên sâu đầu tiên của tôi. Việc sử dụng Markdown giúp tôi tập trung hoàn toàn vào nội dung thay vì phải gõ các thẻ HTML phức tạp.
+
+## 1. Các luận điểm chính
+* Xu hướng dịch chuyển chuỗi cung ứng toàn cầu.
+* Sự trỗi dậy của công nghệ năng lượng mới.
+* Tác động của chính sách tiền tệ hiện tại.
+
+## 2. Phân tích chi tiết
+
+Thị trường đang có những bước chuyển mình *rất đáng chú ý*. Việc áp dụng linh hoạt các chiến lược mới sẽ mang lại **lợi thế cạnh tranh** vô cùng lớn cho các doanh nghiệp bắt kịp xu hướng.
+
+> "Trong bối cảnh biến động, sự chuẩn bị kỹ lưỡng chính là vũ khí sắc bén nhất." - Một chuyên gia phân tích.
+
+Cảm ơn bạn đã đọc bài viết này!
+    </textarea>
+
+    <script>
+        // Lấy nội dung chữ thuần (Markdown) mà bạn vừa viết ở trên
+        var vanBanThuan = document.getElementById('noi-dung-markdown').value;
+        
+        // Dùng thư viện Marked để dịch sang HTML và lấp vào khu vực hiển thị
+        document.getElementById('hien-thi-bai-viet').innerHTML = marked.parse(vanBanThuan);
+    </script>
+
+</body>
+</html>
